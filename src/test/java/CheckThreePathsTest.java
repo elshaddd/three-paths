@@ -36,8 +36,8 @@ public class CheckThreePathsTest {
     @Test
     public void UndComplexTest() throws FileNotFoundException {
         CheckThreePaths checkThreePaths = new CheckThreePaths();
-        var true_graph = GraphFactory.loadGraphFromFile(new File("src/main/resources/checkThreePaths/undirected/complex.txt"));
-        var false_graph = GraphFactory.loadGraphFromFile(new File("src/main/resources/checkThreePaths/undirected/complex_false.txt"));
+        var true_graph = GraphFactory.loadGraphFromFile(new File("src/main/resources/checkThreePaths/undirected/complex_correct.txt"));
+        var false_graph = GraphFactory.loadGraphFromFile(new File("src/main/resources/checkThreePaths/undirected/complex_wrong.txt"));
 
         assertThat(checkThreePaths.execute(true_graph)).isTrue();
         assertThat(checkThreePaths.execute(false_graph)).isFalse();
@@ -54,8 +54,8 @@ public class CheckThreePathsTest {
     @Test
     public void UndCompleteTest() throws FileNotFoundException {
         CheckThreePaths checkThreePaths = new CheckThreePaths();
-        var k2 = GraphFactory.loadGraphFromFile(new File("src/main/resources/checkThreePaths/undirected/k2.txt"));
-        var k3 = GraphFactory.loadGraphFromFile(new File("src/main/resources/checkThreePaths/undirected/k3.txt"));
+        var k2 = GraphFactory.loadGraphFromFile(new File("src/main/resources/checkThreePaths/undirected/k2_wrong.txt"));
+        var k3 = GraphFactory.loadGraphFromFile(new File("src/main/resources/checkThreePaths/undirected/k3_wrong.txt"));
         var k5 = GraphFactory.loadGraphFromFile(new File("src/main/resources/checkThreePaths/undirected/k5.txt"));
         var k6 = GraphFactory.loadGraphFromFile(new File("src/main/resources/checkThreePaths/undirected/k6.txt"));
         var k8 = GraphFactory.loadGraphFromFile(new File("src/main/resources/checkThreePaths/undirected/k8.txt"));
@@ -70,8 +70,8 @@ public class CheckThreePathsTest {
     @Test
     public void UndCompleteBipartiteTest() throws FileNotFoundException {
         CheckThreePaths checkThreePaths = new CheckThreePaths();
-        var k_2_2 = GraphFactory.loadGraphFromFile(new File("src/main/resources/checkThreePaths/undirected/k_2_2.txt"));
-        var k_2_3 = GraphFactory.loadGraphFromFile(new File("src/main/resources/checkThreePaths/undirected/k_2_3.txt"));
+        var k_2_2 = GraphFactory.loadGraphFromFile(new File("src/main/resources/checkThreePaths/undirected/k_2_2_wrong.txt"));
+        var k_2_3 = GraphFactory.loadGraphFromFile(new File("src/main/resources/checkThreePaths/undirected/k_2_3_wrong.txt"));
         var k_4_3 = GraphFactory.loadGraphFromFile(new File("src/main/resources/checkThreePaths/undirected/k_4_3.txt"));
         var k_4_4 = GraphFactory.loadGraphFromFile(new File("src/main/resources/checkThreePaths/undirected/k_4_4.txt"));
 
@@ -115,8 +115,8 @@ public class CheckThreePathsTest {
     @Test
     public void DirSimpleTest() throws FileNotFoundException {
         CheckThreePaths checkThreePaths = new CheckThreePaths();
-        var first = GraphFactory.loadGraphFromFile(new File("src/main/resources/checkThreePaths/directed/graph1.txt"));
-        var second = GraphFactory.loadGraphFromFile(new File("src/main/resources/checkThreePaths/directed/graph2.txt"));
+        var first = GraphFactory.loadGraphFromFile(new File("src/main/resources/checkThreePaths/directed/graph1_wrong.txt"));
+        var second = GraphFactory.loadGraphFromFile(new File("src/main/resources/checkThreePaths/directed/graph2_wrong.txt"));
 
         assertThat(checkThreePaths.execute(first)).isFalse();
         assertThat(checkThreePaths.execute(second)).isFalse();
@@ -125,8 +125,8 @@ public class CheckThreePathsTest {
     @Test
     public void DirMiddleTest() throws FileNotFoundException {
         CheckThreePaths checkThreePaths = new CheckThreePaths();
-        var first = GraphFactory.loadGraphFromFile(new File("src/main/resources/checkThreePaths/directed/graph3.txt"));
-        var second = GraphFactory.loadGraphFromFile(new File("src/main/resources/checkThreePaths/directed/almostK_5_5.txt"));
+        var first = GraphFactory.loadGraphFromFile(new File("src/main/resources/checkThreePaths/directed/graph3_wrong.txt"));
+        var second = GraphFactory.loadGraphFromFile(new File("src/main/resources/checkThreePaths/directed/almostK_5_5_wrong.txt"));
         var third = GraphFactory.loadGraphFromFile(new File("src/main/resources/checkThreePaths/directed/almostK10.txt"));
 
         assertThat(checkThreePaths.execute(first)).isFalse();
